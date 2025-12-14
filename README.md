@@ -1,10 +1,4 @@
-Checking the current Git setup to diagnose the issue:
 
-
-[3 tools called]
-
-
-Deleting `.gitmodules` and removing the remote left broken submodule references. Here’s how to fix it.
 
 ## The problem
 
