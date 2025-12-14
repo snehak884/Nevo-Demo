@@ -6,3 +6,12 @@ key="access_token"
 key="session_id"
 set_cookie.*key=.*access_token
 set_cookie.*key=.*session_id
+
+# Allow base64-encoded images in Jupyter notebooks (not secrets, just embedded images)
+^.*\.ipynb:.*
+image/png.*iVBORw0KGgo
+image/jpeg.*/9j/4AAQSkZJRg
+
+# Allow Google Vertex AI Search redirect URLs (not secrets, just API redirect URLs)
+vertexaisearch\.cloud\.google\.com/grounding-api-redirect/
+https://vertexaisearch\.cloud\.google\.com/grounding-api-redirect/
