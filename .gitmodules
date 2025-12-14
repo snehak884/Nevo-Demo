@@ -1,0 +1,3 @@
+[submodule "Nevo-Framwork-chat-bot"]
+	path = Nevo-Framwork-chat-bot
+	url = https://github.com/diconium/Nevo-chat-bot.git
