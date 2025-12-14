@@ -1,0 +1,23 @@
+# Requirements for nevo-audi-pitch-backend-main
+# Python 3.11 required
+#
+# IMPORTANT: Install the framework FIRST, then install these additional packages
+# Step 1: pip install -e ../nevo-backend-framework-main
+# Step 2: pip install -r requirements.txt
+#
+# The framework already provides: python-dotenv, requests, pydantic, fastapi, 
+# httpx, python-multipart, uvicorn, websockets, pyjwt, bcrypt, aiofiles, 
+# aiohttp, wave, PyAudio, openai, and more.
+
+# Framework (installed as editable from local path)
+# Install this FIRST - it will install all framework dependencies
+-e ../nevo-backend-framework-main
+
+# Additional backend-specific dependencies (not included in framework)
+beautifulsoup4==4.12.3
+pillow==10.4.0
+openpyxl==3.1.5
+asynciolimiter==1.1.1
+pandas==2.2.3
+markdown
+salesforce-api

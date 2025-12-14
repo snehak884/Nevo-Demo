@@ -1,0 +1,97 @@
+{
+    "get_first_name": {
+        "system_message": "Your goal is to used this function to extract the first name of a user from a conversation with an AI assistant if the user mentions their first name in the message.",
+        "function_name": "get_first_name",
+        "function_description": "Function that uses the first name of the user to look the user up in the database.",
+        "argument_name": "first_name",
+        "argument_data_type": "string",
+        "argument_description": "The first name of the user"
+    },
+    "get_family_type": {
+        "system_message": "Your goal is to extract the information that a user shares about their family situation in terms of living with a partner and/or having children.",
+        "function_name": "get_family_type",
+        "function_description": "Function which parses the living situation of a user with respect to family",
+        "argument_name": "family_type",
+        "argument_data_type": "string",
+        "argument_enum": ["single without children", "family", "couple without children", "not specified"],
+        "argument_description": "The coupled and family status of the user, e.g. single without children, family, couple without children"
+    },
+    "get_location_information": {
+        "system_message": "Your goal is to extract the information that a user shares about where they live. ",
+        "function_name": "get_location_information",
+        "function_description": "Function which uses the geographical area a user lives in to provide more relevant information",
+        "argument_name": "location_type",
+        "argument_data_type": "string",
+        "argument_enum": ["city", "suburb", "rural", "small town", "not specified"],
+        "argument_description": "The kind of geographical area the user lives in (e.g. City / Suburb / Rural)"
+    },
+    "get_car_use_information": {
+        "system_message": "",
+        "function_name": "get_car_use_information",
+        "function_description": "Function which uses the reason that a customer uses a car for to provide more relevant information about the car",
+        "argument_name": "car_use_reason",
+        "argument_data_type": "string",
+        "argument_enum": ["commuting for work", "family trips", "business", "weekend trips", "vacation trips", "not specified"],
+        "argument_description": "The type of activity the user will mostly use the car for, such as commuting for work or weekend trips"
+    },
+    "get_skoda_model_information": {
+        "system_message": "",
+        "function_name": "get_skoda_model_information",
+        "function_description": "Use the name of a skoda car model to get more information about the model of the car that the user is interested in",
+        "argument_name": "skoda_vehicle_model",
+        "argument_data_type": "string",
+        "argument_enum": ["enyaq", "kodiaq", "octavia", "superb", "not specified"],
+        "argument_description": "The model of Skoda that the user is interested in buying, e.g. enyaq, kodiaq, octavia, superb"
+    },
+    "get_car_color_information": {
+        "system_message": "",
+        "function_name": "get_car_color_information",
+        "function_description": "Get the information about the color of a car a user is interested in buying, using the color as lookup",
+        "argument_name": "color_information",
+        "argument_data_type": "string",
+        "argument_enum": ["blue", "grey", "red", "silver", "gold", "black", "white", "green", "orange", "beige", "not specified"],
+        "argument_description": "The color of the car the user is interested in buying, for example blue, grey, red etc."
+    },
+    "get_viewing_interest": {
+        "system_message": "",
+        "function_name": "get_viewing_interest",
+        "function_description": "Function that uses the customer's intention to retrieve images for personalising the car, e.g. color, interior, different wheel sizes etc.",
+        "argument_name": "viewing_interest",
+        "argument_data_type": "string",
+        "argument_enum": ["color", "interior", "wheels", "not specified"],
+        "argument_description": "The aspect of personalisation the user would like to see, for example the color, the interior, or the wheels"
+    },
+    "get_driver_assistance_information": {
+        "system_message": "",
+        "function_name": "get_driver_assistance_information",
+        "function_description": "Function that stores the selection of driver assistance for the car",
+        "argument_name": "driver_assistance_feature",
+        "argument_data_type": "string",
+        "argument_enum": ["adaptive cruise control", "lane assist", "parking assist", "blind spot detection", "emergency braking", "not specified"],
+        "argument_description": "The preferred driver assistance add-on for the car"
+    },
+    "get_location_from_postcode": {
+        "system_message": "Your goal is to extract the postal code of the user from a conversation with an AI assistant. ",
+        "function_name": "get_location_from_postcode",
+        "function_description": "Function that looks up geographical information using a post code",
+        "argument_name": "post_code",
+        "argument_data_type": "string",
+        "argument_description": "The postal code of the user"
+    },
+    "lookup_appointment": {
+        "system_message": "Your goal is to extract the date and time of the appointment the user wants to schedule. The user will provide this information in words.",
+        "function_name": "lookup_appointment",
+        "function_description": "Function that uses the date and time of the appointment to look for appointment availability in the database",
+        "argument_name": "appointment_date",
+        "argument_data_type": "string",
+        "argument_description": "The date and time of the appointment the user wants to schedule as words"
+    },
+    "get_car_budget": {
+        "system_message": "",
+        "function_name": "get_car_budget",
+        "function_description": "Function that uses the budget the user has for buying a car for calculating finance-related information",
+        "argument_name": "car_budget",
+        "argument_data_type": "number",
+        "argument_description": "The budget the user has for buying a car"
+    }
+}

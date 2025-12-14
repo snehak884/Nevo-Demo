@@ -1,0 +1,16 @@
+Octavia
+Engine Power Transmission Selection Sportline
+1.5 l TSI 85 kW (115 PS) 6-speed €30,730
+1.5 l TSI mHEV1 85 kW (115 PS) 7-speed DSG2 €33,330
+1.5 l TSI 110 kW (150 PS) 6-speed €33,400 €38,060
+1.5 l TSI mHEV1 110 kW (115 PS) 7-speed DSG2 €36,330 €40,660
+2.0 l TDI 85 kW (115 PS) 6-speed €34,430
+2.0 l TDI 110 kW (150 PS) 7-speed DSG2 €37,730 €42,390
+Non-binding price recommendation
+Engine Power Fuel Consumption Combined (l/100 km) CO2 Emissions Combined (g/km) CO2 Class
+1.5 l TSI 85 kW (115 PS) 4.8–6.5 109–148 C–E
+1.5 l TSI DSG2 mHEV1 85 kW (115 PS) 4.6–6.1 104–139 C–E
+1.5 l TSI 110 kW (150 PS) 4.9–6.9 111–150 C–E
+1.5 l TSI DSG2 mHEV1 110 kW (115 PS) 4.5–6.1 103–139 C–E
+2.0 l TDI 85 kW (115 PS) 4.0–5.2 104–136 C–E
+2.0 l TDI DSG2 110 kW (150 PS) 4.1–5.3 108–140 C–E

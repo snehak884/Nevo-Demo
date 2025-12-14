@@ -1,0 +1,15 @@
+Kodiaq
+Engine Power Transmission Selection Sportline
+1.5 l TSI mHEV1 110 kW (150 PS) 7-speed DSG2 41,990 € 46,490 €
+1.5 l TSI iV 150 kW (204 PS) 6-speed DSG2 48,530 € 53,030 €
+2.0 l TDI 110 kW (150 PS) 7-speed DSG2 45,500 € 50,000 €
+2.0 l TDI 4x4 142 kW (193 PS) 7-speed DSG2 49,700 € 54,200 €
+Non-binding price recommendation
+
+Engine Power Fuel consumption combined (l/100 km) CO2 emissions combined (g/km) CO2 class
+1.5 l TSI mHEV1 110 kW (150 PS) 5.5-7.6 126-173 D-F
+2.0 l TDI DSG2 110 kW (150 PS) 4.9-6.4 128-168 D-F
+2.0 l TDI 4x4 DSG2 142 kW (193 PS) 5.6-7.3 147-192 E-G
+
+Engine Fuel consumption weighted combined (l/100 km) Electricity consumption weighted combined (kWh/100 km) Fuel consumption with empty battery (l/100 km) CO2 emissions weighted combined (g/km) CO2 class weighted combined CO2 class with empty battery Electric range (km)
+0.3-0.8 15.3-21.4 5.7-6.3 7-18 B D-F 95-141

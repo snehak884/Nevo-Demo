@@ -1,0 +1,8 @@
+# .gitallowed - Patterns that are false positives for git-secrets
+# These are legitimate code patterns, not actual secrets
+
+# Allow cookie parameter names (these are just variable names, not secrets)
+key="access_token"
+key="session_id"
+set_cookie.*key=.*access_token
+set_cookie.*key=.*session_id

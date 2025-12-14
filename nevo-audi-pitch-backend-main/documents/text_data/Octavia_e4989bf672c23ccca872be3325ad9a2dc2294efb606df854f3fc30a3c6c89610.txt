@@ -1,0 +1,1 @@
+Škoda Octavia Combi – Travel Assist Traffic Sign Recognition The system detects signs for speed limits, no-overtaking zones, no-entry signs on one-way streets, and road closures, and displays them on the screen.

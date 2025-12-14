@@ -1,0 +1,1 @@
+Škoda Kodiaq – Safety Assistants Driver Alert Fatigue Detection The fatigue detection ("Driver Alert") reduces the risk of fatigue-related dangerous situations. The system monitors the driver's steering behavior, detects signs of fatigue, and alerts the driver with a warning tone and a warning message in the virtual cockpit, indicating that they should take a break.

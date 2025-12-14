@@ -1,0 +1,50 @@
+[
+    {
+        "message": "My name is Neil. I'm married with three kids.",
+        "name": "Neil",
+        "family_type": "married children",
+        "location_type": "",
+        "car_use_reason": "",
+        "car_model_preference": "",
+        "color_preference": "",
+        "interior_preference": "",
+        "extended_warranty_preference": "",
+        "driver_assistance_preference": ""
+    },
+    {
+        "message": "Hey! I'm looking for a car that can fit my dogs for weekend trips to from the city to the countryside.",
+        "name": "",
+        "family_type": "",
+        "location_type": "",
+        "car_use_reason": "weekend trips",
+        "car_model_preference": "",
+        "color_preference": "",
+        "interior_preference": "",
+        "extended_warranty_preference": "",
+        "driver_assistance_preference": ""
+    },
+    {
+        "message": "Well, I need something big enough for my family, but I also want something that's good on gas because my wife, daughter and I take a lot of long family trips away together.",
+        "name": "",
+        "family_type": "married children",
+        "location_type": "",
+        "car_use_reason": "family trips",
+        "car_model_preference": "",
+        "color_preference": "",
+        "interior_preference": "",
+        "extended_warranty_preference": "",
+        "driver_assistance_preference": ""
+    },
+    {
+        "message": "I'm Peter. I live in the city with my two dogs. Still single, but dating. I just need something small to get me to work and back.",
+        "name": "Peter",
+        "family_type": "single no children",
+        "location_type": "city",
+        "car_use_reason": "commuting for work",
+        "car_model_preference": "",
+        "color_preference": "",
+        "interior_preference": "",
+        "extended_warranty_preference": "",
+        "driver_assistance_preference": ""
+    }
+]

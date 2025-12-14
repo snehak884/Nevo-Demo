@@ -1,0 +1,1 @@
+Škoda Enyaq Coupé: Travel Assist Lane Change Assistant The lane change assistant can independently perform a lane change on highways at speeds above 90 km/h. To start the maneuver, the turn signal merely needs to be activated (but only in the unlocked position). The lane change assistant utilizes data from numerous sensors.

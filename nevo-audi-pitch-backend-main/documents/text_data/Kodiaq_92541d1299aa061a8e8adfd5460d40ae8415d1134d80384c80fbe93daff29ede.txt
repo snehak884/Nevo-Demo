@@ -1,0 +1,1 @@
+Kodiaq-Driving Assistance Plus This package enhances the "Driving Assistance" package with additional features that not only simplify driving but also make parking easier. Look forward to the parking steering assistant and 360° environmental cameras, among other things.

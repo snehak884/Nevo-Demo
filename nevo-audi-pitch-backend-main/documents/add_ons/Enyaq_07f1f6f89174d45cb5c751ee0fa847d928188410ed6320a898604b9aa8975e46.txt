@@ -1,0 +1,10 @@
+Enyaq/Enyaq Coupé
+Variant Power¹ Combined electricity consumption (kWh/100 km) Combined CO₂ emissions (g/km) Combined electric range (km) CO₂ class 
+Enyaq 85 (1 electric motor) 210 kW (286 PS) 15.3-16.2 0 551-578 A 
+Enyaq 85 Sportline (1 electric motor) 210 kW (286 PS) 15.7-16.2 0 552-566 A 
+Enyaq 85x (2 electric motors) 210 kW (286 PS) 16.0-16.8 0 513-537 A 
+Enyaq 85x Sportline (2 electric motors) 210 kW (286 PS) 16.3-16.8 0 514-526 A 
+Enyaq Coupé 85 (1 electric motor) 210 kW (286 PS) 15.0-15.8 0 565-589 A 
+Enyaq Coupé 85 Sportline (1 electric motor) 210 kW (286 PS) 15.4-15.8 0 564-574 A 
+Enyaq Coupé 85x (2 electric motors) 210 kW (286 PS) 15.6-16.4 0 525-546 A 
+Enyaq Coupé 85x Sportline (2 electric motors) 210 kW (286 PS) 16.1-16.4 0 525-534 A

@@ -1,0 +1,1 @@
+Škoda Enyaq Coupé: LED Lighting Matrix high beam function Using a front camera that detects the light sources of oncoming vehicles, the matrix function of the full-LED headlights dims individual light segments that would blind other vehicles through individually controllable LED chips in real time. This results in a perfectly illuminated road ahead of you and increased safety.

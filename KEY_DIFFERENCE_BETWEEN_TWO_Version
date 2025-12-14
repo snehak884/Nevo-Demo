@@ -1,0 +1,505 @@
+Comparing the two frontends and backends:
+
+
+[6 tools called]
+
+
+Checking key differences in orchestrators and UI:
+
+
+[4 tools called]
+
+
+## Frontend differences
+
+### 1. Nevo-Framwork-chat-bot/nevo-audi-shop-frontend-main (Shop version)
+- UI library: Material-UI (MUI)
+- Style: E-commerce/product catalog
+- Features:
+  - Product search page with cards
+  - Product detail pages
+  - Vehicle comparison pages
+  - Grid/column layouts
+  - Traditional web UI patterns
+- Purpose: Shopping/browsing experience
+
+### 2. audi-nevo-frontend-main (Pitch version)
+- UI library: Tailwind CSS
+- Style: Immersive 3D showroom
+- Features:
+  - 3D visualizations (Three.js/React Three Fiber)
+  - Dark theme
+  - Voice-first interaction
+  - Sidebar car display
+  - Minimalist, demo-focused UI
+- Purpose: Sales pitch/demo experience
+
+---
+
+## Backend differences
+
+### 1. Nevo-Framwork-chat-bot/nevo-audi-shop-backend-main (Shop version)
+- Database: PostgreSQL (sessions, conversations)
+- Features:
+  - Vehicle search with structured results
+  - Vehicle comparison
+  - Product specs retrieval
+  - Database persistence
+  - More structured data handling
+- Infrastructure:
+  - Docker setup
+  - Terraform for Azure
+  - Production-ready deployment
+  - Database migrations (Alembic)
+- Orchestrator: `AudiOrchestrator` with routing, search, comparison
+
+### 2. nevo-audi-pitch-backend-main (Pitch version)
+- Database: None (in-memory sessions only)
+- Features:
+  - User profile collection
+  - Car recommendations based on profile
+  - Test drive booking
+  - Image walkaround tours
+  - Conversational flow
+- Infrastructure:
+  - Simpler setup
+  - Local development focused
+  - No database required
+- Orchestrator: `AudiAgentOrchestrator` with profile → recommendation → test drive flow
+
+---
+
+## Summary
+
+| Aspect | Shop version | Pitch version |
+|--------|--------------|---------------|
+| Frontend UI | Material-UI, product catalog | Tailwind, 3D showroom |
+| Backend DB | PostgreSQL | No database |
+| Use case | E-commerce shopping | Sales pitch/demo |
+| Complexity | More features, production-ready | Simpler, demo-focused |
+| Deployment | Docker, Terraform, Azure | Local development |
+
+---
+
+## Which one to use?
+
+- Shop version: For a full e-commerce experience with database, structured product data, and production deployment.
+- Pitch version: For a voice-first demo/pitch with 3D visuals and a conversational flow.
+
+Both use the same framework (`nevo-backend-framework-main`), but serve different purposes.
+
+
+
+Yes. PostgreSQL can store the same data. Checking how the shop version uses PostgreSQL:
+
+
+[4 tools called]
+
+
+Yes. PostgreSQL can store the same data. Here's how:
+
+## Current state
+
+### Shop version (PostgreSQL)
+- Stores: Sessions and Conversations
+- Missing: Customer leads/test drive bookings
+
+### Pitch version (Salesforce)
+- Stores: Customer data, test drive bookings, leads
+
+## How to add PostgreSQL for leads in pitch version
+
+You can create a PostgreSQL table similar to Salesforce's `SalesAgentRecord__c`:
+
+```python
+# Example database model for pitch version
+class CustomerLead(Base):
+    __tablename__ = "customer_leads"
+    
+    id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
+    name = Column(String)
+    email = Column(String, unique=True, index=True)
+    phone_number = Column(String)
+    car_model = Column(String)
+    preferred_date = Column(String)  # Test drive date
+    preferred_time = Column(String)  # Test drive time
+    zip_code = Column(String)
+    user_profile = Column(Text)  # User preferences
+    consent_given = Column(Boolean)
+    conversation_summary = Column(Text)
+    created_at = Column(DateTime, default=datetime.utcnow)
+```
+
+## Comparison: PostgreSQL vs Salesforce
+
+| Feature | PostgreSQL | Salesforce |
+|---------|------------|------------|
+| Cost | Free/cheap (self-hosted or managed) | Paid (per user) |
+| Setup | Requires database setup | Cloud service, ready to use |
+| Customization | Full control over schema | Custom objects, but limited |
+| Integration | Direct SQL access | REST API, SOQL queries |
+| Sales team access | Need custom dashboard/UI | Built-in CRM interface |
+| Data ownership | You own the data | Data in Salesforce cloud |
+| Best for | Technical teams, custom needs | Sales teams, out-of-the-box CRM |
+
+## Advantages of PostgreSQL
+
+1. Cost-effective — no per-user licensing
+2. Full control — custom schema and queries
+3. Direct access — SQL queries, easy reporting
+4. Integration — works with any tool that supports SQL
+5. Data ownership — data stays in your infrastructure
+
+## Advantages of Salesforce
+
+1. Ready-made CRM — UI for sales teams
+2. Workflow automation — built-in tools
+3. Mobile app — access on the go
+4. Integration ecosystem — many connectors
+5. Reporting — built-in dashboards
+
+## Recommendation
+
+- Use PostgreSQL if:
+  - You want full control and lower cost
+  - You can build a simple dashboard for sales
+  - You prefer keeping data in your infrastructure
+
+- Use Salesforce if:
+  - Sales teams need the CRM interface
+  - You want out-of-the-box workflows
+  - You need mobile access and integrations
+
+You can also use both: store in PostgreSQL for your systems and sync to Salesforce for the sales team.
+
+?
+
+Comparing how both versions configure Gen-AI, RAG, and voice. Checking the configuration:
+
+
+[6 tools called]
+
+
+Checking document locations and voice configuration:
+
+
+[7 tools called]
+
+
+## Comparison: Gen-AI, RAG, and voice configuration
+
+---
+
+## 1. Gen-AI model configuration
+
+### Pitch version (`nevo-audi-pitch-backend-main`)
+
+**Config file:** `config/master_config.json`
+
+```json
+{
+  "language_model_config": {
+    "deployment": "OpenAI",  // Uses OpenAI.com
+    "model_deployment_name": {
+      "mini": "gpt-4o-mini",
+      "standard": "gpt-4o",
+      "audio": "gpt-4o-audio-preview",
+      "audio-mini": "gpt-4o-mini-audio-preview",
+      "stt": "whisper-1"
+    }
+  }
+}
+```
+
+**How it works:**
+- Uses OpenAI.com API (requires `OPENAI_API_KEY` in `.env`)
+- Models: GPT-4o for text, GPT-4o-audio for voice, Whisper for STT
+- Voice timing: `voice_timing_coefficient: 0.0678655`
+
+---
+
+### Shop version (`nevo-audi-shop-backend-main`)
+
+**Config file:** `config/master_config.json`
+
+```json
+{
+  "language_model_config": {
+    "deployment": "Azure",  // Uses Azure OpenAI
+    "model_deployment_name": {
+      "mini": "gpt-4o-mini",
+      "standard": "gpt-5-chat",
+      "audio": "gpt-audio-mini",
+      "audio-mini": "gpt-audio-mini",
+      "stt": "whisper-1"
+    }
+  }
+}
+```
+
+**How it works:**
+- Uses Azure OpenAI (requires `API_BASE` and Managed Identity)
+- Models: Custom Azure deployments
+- Voice timing: Same coefficients
+
+---
+
+## 2. RAG (custom documents) configuration
+
+### Pitch version — RAG setup
+
+**Document locations:**
+```
+documents/
+├── audi_documents/
+│   ├── knowledge_base_2025-02-24_11-28-19 LARGE_FIXED.json  # Car model info
+│   ├── knowledgebase_assistance.json                         # Safety features
+│   ├── audi_model_vector_index.pkl                          # Pre-computed embeddings
+│   └── safety_feature_vector_index.pkl                      # Pre-computed embeddings
+├── text_data/          # 485 text files
+├── user_experiences/   # 100 text files
+└── add_ons/            # 115 text files
+```
+
+**How RAG is loaded:**
+
+```python
+# In recommendation_and_details.py
+
+# Car Detail Agent - loads car model knowledge
+class CarDetailAgent(VoiceAgent):
+    def __init__(self):
+        if os.path.exists("documents/audi_documents/audi_model_vector_index.pkl"):
+            # Load pre-computed embeddings (fast)
+            self.vectordb = VectorDB.load_from_disk(AUDI_MODEL_VECTOR_INDEX_PATH)
+        else:
+            # Compute embeddings from JSON (slow, first time only)
+            embedding_computer = EmbeddingComputer(model="text-embedding-3-small")
+            self.vectordb = VectorDB(AUDI_MODEL_DATA_FILE, embedding_computer)
+            self.vectordb.store_to_disk(AUDI_MODEL_VECTOR_INDEX_PATH)  # Save for next time
+
+# Safety Feature Agent - loads safety features
+class SafetyFeatureAgent(VoiceAgent):
+    def __init__(self):
+        # Same pattern - load or compute embeddings
+        self.vectordb = VectorDB.load_from_disk(SAFETY_FEATURE_VECTOR_INDEX_PATH)
+```
+
+**RAG usage:**
+```python
+# When user asks about a car model
+async def rag_lookup(self, dialog, car_model="Audi A6"):
+    rewritten_query = await rewrite_query(dialog)  # Improve query
+    results = self.vectordb.search_with_query(rewritten_query, car_model=car_model)
+    # Returns relevant documents from knowledge base
+```
+
+**Embedding model:** `text-embedding-3-small`
+
+---
+
+### Shop version — RAG setup
+
+**Document locations:**
+```
+documents/
+├── generated_vehicle_copy/          # Directory with .md files (18 vehicles)
+│   ├── 1.md, 2.md, ... 18.md
+├── generated_vehicle_copy_by_name/  # Named files
+│   ├── Audi_A3_2024_Premium_marketing_copy.md
+│   └── ...
+├── generated_reviews/               # Review files
+│   ├── Audi_A3_2024_Premium_reviews.txt
+│   └── ...
+└── generated_vehicle_copy.pkl      # Pre-computed embeddings
+```
+
+**How RAG is loaded:**
+
+```python
+# In orchestrator.py
+self.marketing_copy_retriever = RAGRetriever(
+    vectordb_path="documents/generated_vehicle_copy"  # Directory path
+)
+
+# In RAGRetriever class
+class RAGRetriever:
+    def __init__(self, vectordb_path: str):
+        if os.path.exists(f"{vectordb_path}.pkl"):
+            # Load pre-computed
+            self.vectordb = VectorDB.load_from_disk(f"{vectordb_path}.pkl")
+        else:
+            # Load from directory (reads all .md, .txt, .json files)
+            embedding_computer = EmbeddingComputer(model="text-embedding-ada-002")
+            self.vectordb = VectorDB(vectordb_path, embedding_computer)
+            # Computes embeddings lazily on first search
+```
+
+**RAG usage:**
+```python
+# During vehicle search
+self.current_rag_info = await self.marketing_copy_retriever.rag_lookup(
+    user_query=user_content,
+    dialog=dialog,
+    num_results=6
+)
+# Returns marketing copy for vehicles matching user query
+```
+
+**Embedding model:** `text-embedding-ada-002`
+
+---
+
+## 3. Voice command configuration
+
+### Both versions use the same voice system
+
+**Framework handles:**
+- Audio streaming via WebSocket
+- Speech-to-text (Whisper)
+- Text-to-speech (GPT-4o-audio)
+- Real-time audio chunks
+
+**Configuration in `master_config.json`:**
+```json
+{
+  "ai_speaks_first": true,              // AI starts conversation
+  "voice_timing_coefficient": 0.0678655, // Audio timing calculation
+  "voice_timing_offset": 1.2,            // Audio timing offset
+  "recording_file_dir": "temp"          // Where audio files stored
+}
+```
+
+**Voice flow:**
+```
+User speaks → Frontend records → Sends to /receive_audio_blob
+→ Backend transcribes (Whisper) → Processes with AI → 
+Generates response → Converts to speech (GPT-4o-audio) → 
+Streams back via WebSocket → Frontend plays audio
+```
+
+---
+
+## 4. How to customize RAG documents
+
+### Pitch version — add custom documents
+
+**Step 1: Prepare your documents**
+```bash
+# Format: JSON with KnowledgeBase structure
+documents/audi_documents/my_custom_knowledge.json
+```
+
+**Step 2: Update constants**
+```python
+# In src/llm/constants.py
+MY_CUSTOM_DATA_FILE = "documents/audi_documents/my_custom_knowledge.json"
+MY_CUSTOM_VECTOR_INDEX = "documents/audi_documents/my_custom_index.pkl"
+```
+
+**Step 3: Create agent that uses it**
+```python
+# In your agent class
+class MyCustomAgent(VoiceAgent):
+    def __init__(self):
+        if os.path.exists(MY_CUSTOM_VECTOR_INDEX):
+            self.vectordb = VectorDB.load_from_disk(MY_CUSTOM_VECTOR_INDEX)
+        else:
+            embedding_computer = EmbeddingComputer(model="text-embedding-3-small")
+            self.vectordb = VectorDB(MY_CUSTOM_DATA_FILE, embedding_computer)
+            self.vectordb.store_to_disk(MY_CUSTOM_VECTOR_INDEX)
+```
+
+---
+
+### Shop version — add custom documents
+
+**Step 1: Add documents**
+```bash
+# Option 1: Add to existing directory
+documents/generated_vehicle_copy/my_new_doc.md
+
+# Option 2: Create new directory
+documents/my_custom_docs/
+  ├── doc1.txt
+  ├── doc2.md
+  └── doc3.json
+```
+
+**Step 2: Create RAG retriever**
+```python
+# In orchestrator.py
+self.my_custom_retriever = RAGRetriever(
+    vectordb_path="documents/my_custom_docs"
+)
+```
+
+**Step 3: Use in agents**
+```python
+rag_info = await self.my_custom_retriever.rag_lookup(
+    user_query=query,
+    dialog=dialog,
+    num_results=5
+)
+```
+
+---
+
+## 5. Key differences summary
+
+| Aspect | Pitch version | Shop version |
+|--------|---------------|--------------|
+| **RAG format** | JSON files with structured KnowledgeBase | Directory of .md/.txt files |
+| **Embedding model** | `text-embedding-3-small` | `text-embedding-ada-002` |
+| **RAG loading** | Per-agent (CarDetailAgent, SafetyFeatureAgent) | Centralized (RAGRetriever class) |
+| **Document structure** | Structured JSON with metadata | Plain text/markdown files |
+| **Car model filtering** | Yes (filters by `car_model` field) | No (general search) |
+| **Pre-computed indexes** | `.pkl` files per knowledge base | Single `.pkl` per directory |
+| **Gen-AI provider** | OpenAI.com | Azure OpenAI |
+| **Voice models** | GPT-4o-audio-preview | gpt-audio-mini (Azure) |
+
+---
+
+## 6. How to switch between OpenAI and Azure
+
+**Pitch version (currently OpenAI):**
+```json
+// config/master_config.json
+"deployment": "OpenAI"  // Change to "Azure"
+```
+
+**Then in `.env`:**
+```bash
+# For OpenAI.com
+OPENAI_API_KEY=sk-proj-...
+
+# For Azure OpenAI
+API_BASE=https://your-resource.openai.azure.com/
+AZURE_OPENAI_USE_MANAGED_IDENTITY=true
+```
+
+---
+
+## 7. Customizing voice behavior
+
+**Both versions use same voice config:**
+```json
+{
+  "ai_speaks_first": true,  // Change to false if user should speak first
+  "voice_timing_coefficient": 0.0678655,  // Adjust for audio timing
+  "voice_timing_offset": 1.2
+}
+```
+
+**Voice is handled by framework** — no code changes needed, just config.
+
+---
+
+## Summary
+
+- Both use the same framework for voice
+- RAG differs: Pitch uses structured JSON per agent; Shop uses directory-based retrieval
+- Models: Pitch uses OpenAI.com; Shop uses Azure OpenAI
+- Customization: Add documents to the `documents/` folder and create agents/retrievers that use them
+
+Want details on adding custom documents to either version?

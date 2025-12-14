@@ -1,0 +1,16 @@
+Superb Combi
+Engine Power Transmission Essence Selection L&K
+1.5l TSI mHEV1 110 kW (150 HP) 7-speed DSG2 €40,000 €43,270 €50,280
+1.5l TSI iV 150 kW (204 HP) 6-speed DSG2 – €51,350 €58,360
+2.0l TSI 4x4 195 kW (265 HP) 7-speed DSG2 – €50,870 €57,880
+2.0l TDI 110 kW (150 HP) 7-speed DSG2 €44,100 €47,370 €54,380
+2.0l TDI 4x4 142 kW (193 HP) 7-speed DSG2 €48,100 €51,370 €58,380
+Non-binding price recommendation
+Superb Combi 
+Engine Power Combined Fuel Consumption (l/100 km) Combined CO₂ Emissions (g/km) CO₂ Class 
+1.5l TSI mHEV1 DSG2 110 kW (150 HP) 5.1–6.2 117–142 D–E 
+2.0l TSI 4x4 DSG2 195 kW (265 HP) 7.1–8.5 162–193 F–G 
+2.0l TDI DSG2 110 kW (150 HP) 4.5–5.7 118–149 D–E 
+2.0l TDI 4x4 DSG2 142 kW (193 HP) 5.3–6.6 140–174 E–F
+Engine Weighted Combined Fuel Consumption (l/100 km) Weighted Combined Electricity Consumption (kWh/100 km) Fuel Consumption with Depleted Battery (l/100 km) Weighted Combined CO₂ Emissions (g/km) Weighted Combined CO₂ Class CO₂ Class with Depleted Battery Electric Range (km)
+1.5l TSI iV DSG2 150 kW (204 HP) 0.2–0.6 14.3–19.3 4.6–6.3 5–14 B C–E 107–152

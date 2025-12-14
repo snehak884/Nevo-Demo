@@ -1,0 +1,28 @@
+{
+    "config_name": "test_config",
+    "language_model_config": {
+        "deployment": "OpenAI",
+        "model_deployment_name": {
+            "mini": "gpt-4o-mini", 
+            "standard": "gpt-4o", 
+            "audio": "gpt-4o-audio-preview",
+            "audio-mini": "gpt-4o-mini-audio-preview",
+            "stt": "whisper-1"
+        },
+        "api_version": {
+            "audio": "2024-11-01-preview",
+            "text": "2024-08-01-preview"
+        }
+    },
+    "ai_speaks_first": true,
+    "llm_call_timeout": 30.0,
+    "orchestrator_class": "llm.audi_orchestrator.AudiAgentOrchestrator",
+    "timeout_wait_for_frontend_message": 1800,
+    "timeout_session_activity_minutes": 15,
+    "session_cleanup_interval_seconds": 600,
+    "send_response_text_in_end_of_stream": false,
+    "recording_file_dir": "temp",
+    "voice_timing_coefficient": 0.0678655,
+    "voice_timing_offset": 1.2,
+    "context_by_phase_cutoff": true
+}

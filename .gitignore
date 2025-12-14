@@ -1,0 +1,334 @@
+# ============================================================================
+# Environment Variables & Secrets
+# ============================================================================
+.env
+.env.local
+.env.*.local
+*.env
+.env.hash
+# Keep .env.example if you want, but remove actual secrets
+# .env.example  # Uncomment if you want to ignore example files too
+
+# ============================================================================
+# Python Virtual Environments
+# ============================================================================
+# Standard virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.Python
+
+# Pipenv
+.pipenv/
+Pipfile.lock  # Consider committing this for reproducible builds, or ignore it
+
+# Poetry
+poetry.lock  # Consider committing this for reproducible builds
+.poetry/
+
+# Conda
+.conda/
+conda-meta/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+*.tar.gz
+
+# ============================================================================
+# Node.js
+# ============================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.pnpm-store/
+dist/
+build/
+*.tsbuildinfo
+.npm/
+.yarn/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+# Lock files (optional - uncomment if you want to ignore them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ============================================================================
+# Terraform
+# ============================================================================
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate.d/
+*.tfplan
+.terraformrc
+terraform.rc
+# Additional Terraform files
+errored.tfstate
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform.tfstate.lock.info
+
+# ============================================================================
+# IDE & Editor Files
+# ============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+*.code-workspace
+
+# ============================================================================
+# Logs
+# ============================================================================
+*.log
+logs/
+logfile.log
+ai.log
+*.log.*
+
+# ============================================================================
+# Temporary Files
+# ============================================================================
+temp/
+tmp/
+*.tmp
+*.bak
+*.backup
+*.old
+cookies.txt
+
+# ============================================================================
+# Docker
+# ============================================================================
+.dockerignore
+docker-compose.override.yml
+*.dockerignore
+
+# ============================================================================
+# OS Files
+# ============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ============================================================================
+# Testing & Coverage
+# ============================================================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+*.cover
+*.py,cover
+.coverage.*
+coverage.xml
+*.xml
+
+# ============================================================================
+# Jupyter Notebooks
+# ============================================================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ============================================================================
+# Database
+# ============================================================================
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# ============================================================================
+# Compiled Files
+# ============================================================================
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ============================================================================
+# Package Files
+# ============================================================================
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ============================================================================
+# Application Specific
+# ============================================================================
+# Backend specific temp and log directories
+**/nevo-audi-pitch-backend-main/temp/
+**/nevo-audi-shop-backend-main/temp/
+**/nevo-audi-shop-backend-main/ai.log
+**/nevo-audi-shop-backend-main/logfile.log
+
+# Frontend build outputs
+**/audi-nevo-frontend-main/dist/
+**/nevo-audi-shop-frontend-main/dist/
+
+# Framework build artifacts
+**/nevo-backend-framework-main/*.egg-info/
+**/nevo-backend-framework-main/dist/
+**/nevo-backend-framework-main/build/
+
+# Additional sensitive/important files
+**/.venv/
+**/venv/
+**/.env
+**/.env.*
+**/*.tfstate
+**/*.tfstate.*
+**/.terraform/
+**/errored.tfstate
+
+# ============================================================================
+# Documentation and Scripts (optional - uncomment if you want to exclude)
+# ============================================================================
+# docs/
+# scripts/
+
+# ============================================================================
+# Additional Python-specific
+# ============================================================================
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# ============================================================================
+# Additional Node.js
+# ============================================================================
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# Next.js
+.next/
+out/
+
+# Nuxt.js
+.nuxt/
+
+# ============================================================================
+# Additional Security & Secrets
+# ============================================================================
+# Certificate and key files
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.jks
+*.keystore
+
+# SSH keys
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.ppk
+known_hosts
+
+# Cloud provider credentials
+.aws/
+aws-credentials
+*.aws
+.gcloud/
+.azure/
+azure-credentials
+
+# Sensitive config files (be specific to avoid false positives)
+*secrets.json
+*credentials.json
+*config.local.json
+*settings.local.json
+
+# ============================================================================
+# Keep important files (use ! to negate patterns above)
+# ============================================================================
+# Uncomment if you want to keep .env.example files
+# !.env.example
+# !*.example.json
+# !*.example.yaml
+
